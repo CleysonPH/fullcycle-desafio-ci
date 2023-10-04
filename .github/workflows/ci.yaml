@@ -1,0 +1,24 @@
+name: fullcyle-desafio-ci
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-application:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install all dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm run test
