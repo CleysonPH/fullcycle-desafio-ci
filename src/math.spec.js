@@ -23,3 +23,9 @@ describe("math.divide", () => {
     expect(math.divide(1, 2)).toBe(0.5);
   });
 });
+
+describe("math.sqrt", () => {
+  it("should return the square root of a number", () => {
+    expect(math.sqrt(4)).toBe(2);
+  });
+});
